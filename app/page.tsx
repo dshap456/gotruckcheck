@@ -317,10 +317,6 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <h2>Your customer list stays your customer list.</h2>
-            <p>
-              You are handing over the contact list your business runs on. Here is
-              exactly what we do with it.
-            </p>
           </div>
 
           <div className="trust-grid" data-reveal="stagger">
