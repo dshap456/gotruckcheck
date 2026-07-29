@@ -43,7 +43,7 @@ export default function Home() {
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
               <a className="text-link" href="#the-money">
-                See the money math
+                See the math
                 <ArrowRight aria-hidden="true" size={16} />
               </a>
             </div>

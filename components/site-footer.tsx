@@ -9,7 +9,7 @@ const columns = [
       { label: "How it works", href: "/#how-it-works" },
       { label: "See the product", href: "/#product" },
       { label: "Pricing", href: "/#pricing" },
-      { label: "The money math", href: "/#the-money" },
+      { label: "The math", href: "/#the-money" },
     ],
   },
   {
@@ -17,7 +17,7 @@ const columns = [
     links: [
       { label: "Your data", href: "/#data" },
       { label: "Questions", href: "/#questions" },
-      { label: "Get early access", href: "/#early-access" },
+      { label: "Get access", href: "/#early-access" },
     ],
   },
   {
@@ -67,10 +67,6 @@ export function SiteFooter() {
 
       <div className="container footer__bottom">
         <p>© {new Date().getFullYear()} GoTruckCheck. All rights reserved.</p>
-        <p>
-          Not affiliated with, endorsed by, or acting on behalf of the California
-          Air Resources Board.
-        </p>
       </div>
     </footer>
   );

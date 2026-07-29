@@ -93,7 +93,7 @@ export function SiteHeader() {
             href="/#early-access"
             onClick={() => setMenuOpen(false)}
           >
-            Get early access
+            Get access
           </Link>
         </div>
       </div>
