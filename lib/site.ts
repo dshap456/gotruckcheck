@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.gotruckcheck.com";
 
 /** Shared address for every CTA, mailto fallback, and legal page. */
-export const contactEmail = "support@gotruckcheck.com";
+export const contactEmail = "dave@gotruckcheck.com";
 
 export const navItems = [
   { label: "The math", href: "/#the-money" },
