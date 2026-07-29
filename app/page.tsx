@@ -358,11 +358,6 @@ export default function Home() {
         <div className="container access-grid">
           <div className="access-copy">
             <h2>Put the follow‑up on autopilot.</h2>
-            <p>
-              Tell us a little about your operation. We’ll load your first
-              customer list, set your reminder intervals, and hand you a booking
-              link in your business name.
-            </p>
             <ul className="access-points">
               <li>
                 <Check aria-hidden="true" /> $2 per truck a month, no contract

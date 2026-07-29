@@ -1308,13 +1308,6 @@ summary {
   margin-top: 0;
 }
 
-.access-copy > p {
-  max-width: 32rem;
-  margin-top: 1.1rem;
-  color: #dce5f5;
-  line-height: 1.7;
-}
-
 .access-points {
   display: flex;
   flex-direction: column;
