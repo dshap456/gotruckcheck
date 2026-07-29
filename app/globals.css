@@ -3,6 +3,10 @@
   --navy-deep: #173e85;
   --navy-tint: #edf2fb;
   --navy-ring: #dfe8f8;
+  --accent: #207f49;
+  --accent-deep: #176b3a;
+  --accent-tint: #edf7f1;
+  --accent-ring: #cde8d8;
   --green: #2f9e57;
   --green-tint: #e9f6ef;
   --red: #d0453f;
@@ -117,7 +121,7 @@ summary {
 }
 
 :focus-visible {
-  outline: 2px solid var(--navy);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -137,6 +141,10 @@ summary {
   letter-spacing: 0.09em;
   line-height: 1.2;
   text-transform: uppercase;
+}
+
+.accent-text {
+  color: var(--accent);
 }
 
 .sr-only,
@@ -303,14 +311,14 @@ summary {
 
 .button--nav {
   min-height: 2.75rem;
-  background: var(--navy);
+  background: var(--accent);
   color: var(--white);
 }
 
 .button--primary {
   min-height: 3.25rem;
   padding-inline: 1.35rem;
-  background: var(--navy);
+  background: var(--accent);
   box-shadow: 0 1px 2px rgb(16 24 40 / 0.16);
   color: var(--white);
 }
@@ -331,8 +339,8 @@ summary {
 
 .button--nav:hover,
 .button--primary:hover {
-  background: var(--navy-deep);
-  box-shadow: 0 7px 18px rgb(23 62 133 / 0.2);
+  background: var(--accent-deep);
+  box-shadow: 0 7px 18px rgb(23 107 58 / 0.22);
 }
 
 .button--light:hover {
@@ -633,16 +641,17 @@ summary {
 }
 
 .math-row--accent {
-  border-color: var(--navy-ring);
+  border-color: var(--accent-ring);
+  background: var(--accent-tint);
 }
 
 .math-row--accent strong {
-  color: var(--navy);
+  color: var(--accent);
 }
 
 .math-symbol {
   align-self: center;
-  color: var(--navy);
+  color: var(--accent);
   font-size: 1.5rem;
 }
 

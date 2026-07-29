@@ -28,7 +28,10 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__grid">
           <div className="hero__copy">
-            <h1>Turn every truck into recurring revenue</h1>
+            <h1>
+              Turn every truck into{" "}
+              <span className="accent-text">recurring revenue</span>
+            </h1>
             <p className="hero__lede">
               Track every deadline. Let customers book with a tap.{" "}
               <strong>$2 per truck a month.</strong> Most testers can bill it back

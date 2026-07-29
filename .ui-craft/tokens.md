@@ -3,6 +3,7 @@
 ## Primitive
 
 - **Navy:** `#1d4a9b`; deep `#173e85`; tint `#edf2fb`
+- **Commerce accent:** `#207f49`; deep `#176b3a`; tint `#edf7f1`
 - **Green (status only):** `#2f9e57`; tint `#e9f6ef`
 - **Red:** `#d0453f`; amber `#b54708`
 - **Ink:** `#14243e`; secondary `#667085`; tertiary `#98a2b3`
@@ -17,14 +18,14 @@
 
 - **Page:** canvas background, ink foreground
 - **Raised:** white background with a cool gray hairline
-- **Accent:** navy background, white foreground; deep navy hover
+- **Accent:** deep brand green background, white foreground; darker green hover
 - **Success:** green text/tint; never decorative
 - **Focus:** navy 2px outline with white offset
 - **Muted:** secondary ink; tertiary only for nonessential metadata
 
 ## Component
 
-- **Primary button:** navy, 6px radius, 48px minimum height, 18px horizontal padding
+- **Primary button:** deep brand green, 6px radius, 48px minimum height, 18px horizontal padding
 - **Secondary button:** white, navy text, gray border, 48px minimum height
 - **Card:** 10–20px radius by scale, hairline border, layered ambient/direct shadow
 - **Input/range:** 44px minimum target, visible navy focus ring
