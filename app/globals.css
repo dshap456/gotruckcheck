@@ -35,6 +35,9 @@
   --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05), 0 1px 3px rgb(16 24 40 / 0.07);
   --shadow-md: 0 8px 24px rgb(16 24 40 / 0.08), 0 2px 6px rgb(16 24 40 / 0.05);
   --shadow-lg: 0 24px 60px -18px rgb(16 24 40 / 0.24), 0 6px 18px rgb(16 24 40 / 0.08);
+  --motion-fast: 120ms;
+  --motion-base: 220ms;
+  --motion-slow: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -246,6 +249,14 @@ summary {
 
 .button:hover {
   transform: translateY(-1px);
+}
+
+.button--primary svg {
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.button--primary:hover svg {
+  transform: translateX(2px);
 }
 
 .button--nav:hover,
@@ -979,6 +990,35 @@ summary {
   line-height: 1.7;
 }
 
+.faq-list details[open] p {
+  animation: detail-enter var(--motion-base) var(--ease-out) both;
+}
+
+.motion-ready [data-reveal] {
+  opacity: 0.01;
+  transform: translateY(0.75rem);
+  transition:
+    opacity var(--motion-slow) var(--ease-out),
+    transform var(--motion-slow) var(--ease-out);
+}
+
+.motion-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes detail-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .closing {
   padding-block: var(--space-24);
   background: var(--navy);
@@ -1316,8 +1356,15 @@ summary {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

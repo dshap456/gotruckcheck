@@ -9,6 +9,7 @@ import {
   Truck,
 } from "lucide-react";
 import { RevenueCalculator } from "@/components/revenue-calculator";
+import { RevealController } from "@/components/reveal-controller";
 
 const earlyAccessHref =
   "mailto:david.alan.shapiro@gmail.com?subject=GoTruckCheck%20early%20access&body=Business%20name%3A%0AApprox.%20trucks%20under%20watch%3A%0APhone%3A";
@@ -26,6 +27,7 @@ export default function Home() {
       <a className="skip-link" href="#main">
         Skip to main content
       </a>
+      <RevealController />
 
       <header className="site-header">
         <div className="container nav">
@@ -158,7 +160,7 @@ export default function Home() {
                 watch the dates, and keep the jobs moving back to you.
               </p>
             </div>
-            <ol className="steps">
+            <ol className="steps" data-reveal="up">
               <li>
                 <span className="step-number">1</span>
                 <div>
@@ -225,7 +227,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="phone-pair">
+              <div className="phone-pair" data-reveal="up">
                 <figure>
                   <Image
                     src="/product/text-message-loop.png"
@@ -269,7 +271,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="single-phone">
+              <div className="single-phone" data-reveal="up">
                 <Image
                   src="/product/deadline-tracking.png"
                   alt="Phone view listing overdue and upcoming Clean Truck Check deadlines"
@@ -293,7 +295,7 @@ export default function Home() {
                   through five tools.
                 </p>
               </div>
-              <div className="desktop-shot">
+              <div className="desktop-shot" data-reveal="up">
                 <Image
                   src="/product/desktop-command-center.png"
                   alt="Desktop GoTruckCheck command center with truck deadlines, booking request, and schedule"
@@ -307,7 +309,7 @@ export default function Home() {
         </section>
 
         <section className="section deadline-section">
-          <div className="container deadline-card">
+          <div className="container deadline-card" data-reveal="up">
             <div className="deadline-card__mark">
               <Truck aria-hidden="true" />
             </div>

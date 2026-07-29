@@ -11,7 +11,7 @@
 - **Body:** Inter 400–700
 - **Spacing:** 4, 8, 12, 16, 24, 32, 48, 64, 96, 128
 - **Radius:** 6px controls, 10px cards, 14px panels, 20px feature frames, full pills
-- **Motion:** 120ms fast, 220ms normal, `cubic-bezier(.16, 1, .3, 1)`
+- **Motion:** 120ms fast, 220ms interaction, 400ms one-time reveal, `cubic-bezier(.16, 1, .3, 1)`; transform and opacity only
 
 ## Semantic
 

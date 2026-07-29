@@ -23,7 +23,11 @@ export function RevenueCalculator() {
   );
 
   return (
-    <div className="calculator" aria-labelledby="calculator-title">
+    <div
+      className="calculator"
+      aria-labelledby="calculator-title"
+      data-reveal="up"
+    >
       <div className="calculator__top">
         <div>
           <p className="eyebrow">Run your numbers</p>
