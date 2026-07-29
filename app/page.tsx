@@ -30,7 +30,7 @@ export default function Home() {
         <div className="container hero__grid">
           <div className="hero__copy">
             <p className="eyebrow">Built for Clean Truck Check testers</p>
-            <h1>Turn every truck you&apos;ve tested into monthly revenue.</h1>
+            <h1>Turn every truck you’ve tested into monthly revenue.</h1>
             <p className="hero__lede">
               Track every deadline. Send automatic texts from your number. Let
               customers book with a tap. <strong>$2 per truck a month.</strong>{" "}
@@ -124,20 +124,20 @@ export default function Home() {
         <div className="container how-grid">
           <div className="how-intro">
             <p className="eyebrow">How it works</p>
-            <h2>You keep testing. The follow-up runs itself.</h2>
+            <h2>You keep testing. The follow‑up runs itself.</h2>
             <p>
               No long setup. No new app for your fleets. We get the list in, watch
               the dates, and keep the jobs moving back to you.
             </p>
           </div>
-          <ol className="steps" data-reveal="up">
+          <ol className="steps" data-reveal="stagger">
             <li>
               <span className="step-number">1</span>
               <div>
                 <h3>Send us your customer list</h3>
                 <p>
                   A spreadsheet, photos of your notebook—whatever you have.
-                  We&apos;ll load it by tomorrow.
+                  We’ll load it by tomorrow.
                 </p>
               </div>
             </li>
@@ -223,8 +223,8 @@ export default function Home() {
               <p className="eyebrow">No deadline hunting</p>
               <h3>Know who is due before they do.</h3>
               <p>
-                Open the phone and see what&apos;s overdue, what&apos;s next, and
-                what already booked. That&apos;s the call list—without the
+                Open the phone and see what’s overdue, what’s next, and
+                what already booked. That’s the call list—without the
                 spreadsheet.
               </p>
               <div className="mini-facts">
@@ -368,7 +368,7 @@ export default function Home() {
             </p>
             <p>
               Most of that tracking still lives in a spreadsheet, a notebook, or
-              someone&apos;s memory. So the repeat work leaks to whoever calls
+              someone’s memory. So the repeat work leaks to whoever calls
               first. GoTruckCheck exists to close that gap—quietly, from your
               number, under your business name.
             </p>
@@ -391,7 +391,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="trust-grid" data-reveal="up">
+          <div className="trust-grid" data-reveal="stagger">
             <div className="trust-card">
               <ShieldCheck aria-hidden="true" />
               <h3>We never sell or share it</h3>
@@ -422,14 +422,17 @@ export default function Home() {
 
       <section className="section faq-section" id="questions">
         <div className="container faq-grid">
-          <div>
+          <div className="faq-intro">
             <p className="eyebrow">Straight answers</p>
             <h2>Before you put a truck on the list.</h2>
           </div>
           <div className="faq-list">
             {faqs.map((faq) => (
               <details key={faq.question}>
-                <summary>{faq.question}</summary>
+                <summary>
+                  {faq.question}
+                  <span className="faq-marker" aria-hidden="true" />
+                </summary>
                 <p>{faq.answer}</p>
               </details>
             ))}
@@ -441,9 +444,9 @@ export default function Home() {
         <div className="container access-grid">
           <div className="access-copy">
             <p className="eyebrow">Early access</p>
-            <h2>Put the follow-up on autopilot.</h2>
+            <h2>Put the follow‑up on autopilot.</h2>
             <p>
-              Tell us a little about your operation. We&apos;ll load your first
+              Tell us a little about your operation. We’ll load your first
               customer list, set your reminder intervals, and hand you a booking
               link in your business name.
             </p>

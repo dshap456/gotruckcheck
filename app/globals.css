@@ -99,8 +99,10 @@ h2 {
 }
 
 h3 {
+  font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 p {
@@ -319,10 +321,6 @@ summary {
   color: var(--navy);
 }
 
-.button:hover {
-  transform: translateY(-1px);
-}
-
 .button--primary svg {
   transition: transform var(--motion-fast) var(--ease-out);
 }
@@ -414,6 +412,7 @@ summary {
   margin-top: 1rem;
   color: var(--ink-2);
   font-size: 0.8125rem;
+  line-height: 1.45;
 }
 
 .hero__trust svg {
@@ -429,9 +428,9 @@ summary {
 .hero__visual::before {
   position: absolute;
   inset: 4.5rem -9rem -6rem -2rem;
-  border: 1px solid var(--navy-ring);
+  border: 1px solid #dbe5f6;
   border-radius: 3rem 0 0;
-  background: var(--navy-tint);
+  background: #e8eefa;
   content: "";
 }
 
@@ -506,6 +505,9 @@ summary {
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: 1.65rem;
   font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .proof-strip span {
@@ -578,6 +580,8 @@ summary {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-variant-numeric: tabular-nums;
   font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .calculator__range {
@@ -687,6 +691,7 @@ summary {
   font-size: clamp(1.35rem, 2.8vw, 2.1rem);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .math-row small {
@@ -756,13 +761,12 @@ summary {
 
 .how-section {
   border-top: 1px solid var(--hairline);
-  padding-block: 7rem;
 }
 
 .how-grid {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: clamp(4rem, 9vw, 8rem);
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
 }
 
 .how-intro {
@@ -828,6 +832,7 @@ summary {
 .product-section {
   overflow: hidden;
   background: var(--white);
+  padding-block: 6.5rem 7.5rem;
 }
 
 .product-section .section-heading {
@@ -857,7 +862,10 @@ summary {
 .feature-copy h3 {
   max-width: 13ch;
   margin-top: 0.8rem;
+  font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
 }
 
 .feature-copy > p:not(.eyebrow) {
@@ -990,15 +998,15 @@ summary {
 .desktop-feature__copy h3 {
   max-width: 15ch;
   margin-top: 1rem;
+  font-family: var(--font-display), Montserrat, sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
 }
 
 .desktop-feature__copy svg {
   width: 1.05rem;
   color: var(--navy);
-}
-
-.desktop-feature__copy h3 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .desktop-feature__copy > p {
@@ -1022,6 +1030,7 @@ summary {
 
 .pricing-section {
   border-top: 1px solid var(--hairline);
+  padding-block: 8.5rem 7.5rem;
 }
 
 .plan {
@@ -1048,7 +1057,7 @@ summary {
 .plan__amount {
   display: flex;
   align-items: flex-start;
-  gap: 0.55rem;
+  gap: 0.9rem;
   margin-top: 1rem;
   color: var(--navy);
   font-family: var(--font-display), Montserrat, sans-serif;
@@ -1057,13 +1066,16 @@ summary {
 }
 
 .plan__currency {
-  margin-top: 0.75rem;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin-top: 0.55rem;
+  margin-right: -0.55rem;
+  color: #5a80c4;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
 }
 
 .plan__figure {
   font-size: clamp(4.5rem, 9vw, 6.5rem);
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.045em;
   line-height: 0.88;
 }
 
@@ -1092,6 +1104,7 @@ summary {
   margin-top: 0.75rem;
   color: var(--ink-2);
   font-size: 0.75rem;
+  line-height: 1.45;
   text-align: center;
 }
 
@@ -1182,6 +1195,12 @@ summary {
   gap: clamp(3rem, 8vw, 7rem);
 }
 
+.faq-intro {
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+
 .faq-grid h2 {
   max-width: 10ch;
   margin-top: 1rem;
@@ -1203,24 +1222,44 @@ summary {
   gap: var(--space-4);
   font-size: 1.0625rem;
   font-weight: 700;
+  line-height: 1.35;
   cursor: pointer;
   list-style: none;
+  transition: color var(--motion-fast) ease-out;
 }
 
 .faq-list summary::-webkit-details-marker {
   display: none;
 }
 
-.faq-list summary::after {
+/* Two bars instead of a swapped glyph, so the state change can animate. */
+.faq-marker {
+  position: relative;
+  width: 0.875rem;
+  height: 0.875rem;
   flex: none;
-  color: var(--navy);
-  content: "+";
-  font-size: 1.5rem;
-  font-weight: 400;
 }
 
-.faq-list details[open] summary::after {
-  content: "−";
+.faq-marker::before,
+.faq-marker::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 1px;
+  background: var(--navy);
+  content: "";
+  transition: transform var(--motion-base) var(--ease-out);
+}
+
+.faq-marker::after {
+  transform: rotate(90deg);
+}
+
+.faq-list details[open] .faq-marker::after {
+  transform: rotate(0deg);
 }
 
 .faq-list details p {
@@ -1234,7 +1273,8 @@ summary {
   animation: detail-enter var(--motion-base) var(--ease-out) both;
 }
 
-.motion-ready [data-reveal] {
+.motion-ready [data-reveal="up"],
+.motion-ready [data-reveal="stagger"] > * {
   opacity: 0.01;
   transform: translateY(0.75rem);
   transition:
@@ -1242,9 +1282,23 @@ summary {
     transform var(--motion-slow) var(--ease-out);
 }
 
-.motion-ready [data-reveal].is-revealed {
+.motion-ready [data-reveal="up"].is-revealed,
+.motion-ready [data-reveal="stagger"].is-revealed > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Siblings arrive in reading order rather than as one slab. */
+.motion-ready [data-reveal="stagger"].is-revealed > *:nth-child(2) {
+  transition-delay: 60ms;
+}
+
+.motion-ready [data-reveal="stagger"].is-revealed > *:nth-child(3) {
+  transition-delay: 120ms;
+}
+
+.motion-ready [data-reveal="stagger"].is-revealed > *:nth-child(4) {
+  transition-delay: 180ms;
 }
 
 @keyframes detail-enter {
@@ -1261,6 +1315,7 @@ summary {
 
 .why-section {
   background: var(--white);
+  padding-block: 8.5rem 5.5rem;
 }
 
 .why-grid {
@@ -1286,6 +1341,7 @@ summary {
 .data-section {
   border-top: 1px solid var(--hairline);
   background: var(--white);
+  padding-block: 5.5rem 7.5rem;
 }
 
 .trust-grid {
@@ -1298,6 +1354,7 @@ summary {
 .trust-card {
   padding: var(--space-8);
   border: 1px solid var(--hairline);
+  transition: border-color var(--motion-base) var(--ease-out);
   border-radius: var(--radius-card);
   background: var(--canvas);
 }
@@ -1321,10 +1378,9 @@ summary {
 }
 
 .access-section {
-  padding-block: var(--space-24);
+  padding-block: 6.5rem;
   background: var(--navy);
   color: var(--white);
-  scroll-margin-top: 5rem;
 }
 
 .access-grid {
@@ -1733,7 +1789,8 @@ summary {
     gap: var(--space-12);
   }
 
-  .how-intro {
+  .how-intro,
+  .faq-intro {
     position: static;
   }
 
@@ -1903,10 +1960,15 @@ summary {
     order: 0;
   }
 
+  /* The fixed min-height outran the shrunken phones and left dead space on top. */
   .phone-pair {
-    min-height: 28rem;
+    min-height: 0;
     gap: 0.7rem;
-    padding: 1.75rem 0.75rem 0;
+    padding: 1.5rem 0.75rem 0;
+  }
+
+  .phone-pair figure:first-child {
+    transform: translateY(2rem);
   }
 
   .single-phone {
@@ -1981,14 +2043,28 @@ summary {
     transition-duration: 0.01ms !important;
   }
 
-  [data-reveal] {
+  [data-reveal],
+  [data-reveal] > * {
     opacity: 1 !important;
     transform: none !important;
+    transition-delay: 0ms !important;
   }
 }
 
-@media (hover: none) {
+@media (hover: hover) and (pointer: fine) {
   .button:hover {
-    transform: none;
+    transform: translateY(-1px);
   }
+
+  .faq-list summary:hover {
+    color: var(--navy);
+  }
+
+  .trust-card:hover {
+    border-color: var(--navy-ring);
+  }
+}
+
+.button:active {
+  transform: scale(0.985);
 }
