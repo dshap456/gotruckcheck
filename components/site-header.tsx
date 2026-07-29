@@ -63,9 +63,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="nav__actions">
-          <Link className="button button--nav" href="/#early-access">
-            Get early access
-          </Link>
           <button
             ref={toggleRef}
             className="nav__toggle"

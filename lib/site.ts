@@ -7,7 +7,7 @@ export const siteUrl = "https://www.gotruckcheck.com";
 export const contactEmail = "david.alan.shapiro@gmail.com";
 
 export const navItems = [
-  { label: "The money", href: "/#the-money" },
+  { label: "The math", href: "/#the-money" },
   { label: "How it works", href: "/#how-it-works" },
   { label: "See the product", href: "/#product" },
   { label: "Pricing", href: "/#pricing" },
