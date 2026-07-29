@@ -148,7 +148,7 @@ export default function Home() {
         <div className="container">
           <div className="feature-row">
             <div className="feature-copy">
-              <h3>Your reminder. Your number. Their next test.</h3>
+              <h3>The Alerts Sell the Appointments</h3>
               <p>
                 Texts go out at the intervals you choose. The booking link is
                 branded as your business. A reply or tap lands on your schedule.
