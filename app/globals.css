@@ -1,26 +1,23 @@
 :root {
   --navy: #1d4a9b;
   --navy-deep: #173e85;
-  --navy-tint: #dfe8f9;
-  --navy-ring: #ccdbf2;
+  --navy-tint: #edf2fb;
+  --navy-ring: #dfe8f8;
   --green: #2f9e57;
   --green-tint: #e9f6ef;
   --red: #d0453f;
   --amber: #b54708;
   --ink: #14243e;
-  /* Darkened with the canvas: #667085 fell to 4.2:1 on the deeper ground. */
-  --ink-2: #5c6780;
+  --ink-2: #667085;
   --ink-3: #98a2b3;
   --ink-readable: #536074;
-  --canvas: #eaeef5;
+  --canvas: #f5f7f9;
   --app-bg: #f2f4f7;
   --white: #ffffff;
-  --hairline: #dde3ec;
+  --hairline: #e6eaf0;
   --surface-canvas: var(--canvas);
   --surface-raised: var(--white);
   --surface-overlay: #fbfcfd;
-  /* Blue-grey field the product shots sit on, echoing the hero stage. */
-  --stage: #dbe4f4;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -38,7 +35,6 @@
   --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05), 0 1px 3px rgb(16 24 40 / 0.07);
   --shadow-md: 0 8px 24px rgb(16 24 40 / 0.08), 0 2px 6px rgb(16 24 40 / 0.05);
   --shadow-lg: 0 24px 60px -18px rgb(16 24 40 / 0.24), 0 6px 18px rgb(16 24 40 / 0.08);
-  --shadow-card: 0 1px 2px rgb(20 36 62 / 0.04), 0 12px 28px -18px rgb(20 36 62 / 0.28);
   --motion-fast: 120ms;
   --motion-base: 220ms;
   --motion-slow: 400ms;
@@ -430,9 +426,10 @@ summary {
 
 .hero__visual::before {
   position: absolute;
-  inset: calc(clamp(4.5rem, 7vw, 6.5rem) * -1) -9rem -6rem -2rem;
-  border-radius: 3.5rem 0 0;
-  background: var(--navy);
+  inset: 4.5rem -9rem -6rem -2rem;
+  border: 1px solid var(--navy-ring);
+  border-radius: 3rem 0 0;
+  background: var(--navy-tint);
   content: "";
 }
 
@@ -475,14 +472,14 @@ summary {
 }
 
 .phone-stage img {
-  filter: drop-shadow(0 30px 48px rgb(9 20 40 / 0.42));
+  filter: drop-shadow(0 28px 40px rgb(16 24 40 / 0.18));
 }
 
 .proof-strip {
   position: relative;
   z-index: 5;
-  background: var(--ink);
-  color: var(--white);
+  border-block: 1px solid var(--hairline);
+  background: var(--white);
 }
 
 .proof-strip__inner {
@@ -500,7 +497,7 @@ summary {
 }
 
 .proof-strip__inner > div + div {
-  border-left: 1px solid rgb(255 255 255 / 0.14);
+  border-left: 1px solid var(--hairline);
 }
 
 .proof-strip strong {
@@ -514,7 +511,7 @@ summary {
 }
 
 .proof-strip span {
-  color: #a8b6cc;
+  color: var(--ink-2);
   font-size: 0.875rem;
 }
 
@@ -559,7 +556,7 @@ summary {
   margin-top: var(--space-16);
   border: 1px solid var(--navy-ring);
   border-radius: var(--radius-panel);
-  background: #e5ecf9;
+  background: #eef3fb;
   box-shadow:
     0 1px 2px rgb(16 24 40 / 0.04),
     0 18px 48px -28px rgb(23 62 133 / 0.28);
@@ -603,14 +600,14 @@ summary {
   background: linear-gradient(
     to right,
     var(--navy) 0 var(--range-progress, 50%),
-    #c2d0e8 var(--range-progress, 50%) 100%
+    #d7dfeb var(--range-progress, 50%) 100%
   );
 }
 
 .calculator__range::-moz-range-track {
   height: 0.5rem;
   border-radius: 999px;
-  background: #c2d0e8;
+  background: #d7dfeb;
 }
 
 .calculator__range::-moz-range-progress {
@@ -681,7 +678,7 @@ summary {
   border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
   background: var(--white);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-sm);
 }
 
 .math-row > span {
@@ -908,8 +905,12 @@ summary {
   align-items: end;
   gap: 1.5rem;
   padding: 2.5rem 2.25rem 0;
-  border-radius: var(--radius-feature);
-  background: var(--stage);
+  border: 1px solid var(--navy-ring);
+  border-radius: var(--radius-panel);
+  background: #f3f5f8;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.72),
+    0 18px 45px -34px rgb(16 24 40 / 0.32);
   overflow: hidden;
 }
 
@@ -923,7 +924,7 @@ summary {
 
 .phone-pair img,
 .single-phone img {
-  filter: drop-shadow(0 26px 40px rgb(20 36 62 / 0.26));
+  filter: drop-shadow(0 26px 36px rgb(16 24 40 / 0.18));
 }
 
 .single-phone {
@@ -932,8 +933,12 @@ summary {
   height: 28.5rem;
   justify-content: center;
   padding-top: 2.5rem;
-  border-radius: var(--radius-feature);
-  background: var(--stage);
+  border: 1px solid var(--navy-ring);
+  border-radius: var(--radius-panel);
+  background: #f3f5f8;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.72),
+    0 18px 45px -34px rgb(16 24 40 / 0.32);
   overflow: hidden;
 }
 
@@ -1014,18 +1019,13 @@ summary {
 .desktop-shot {
   width: 100%;
   max-width: 100%;
-  padding: clamp(1rem, 2.5vw, 2.25rem) clamp(1rem, 2.5vw, 2.25rem) 0;
   margin-top: var(--space-12);
   overflow: hidden;
-  border-radius: var(--radius-feature);
-  background: var(--stage);
-}
-
-.desktop-shot img {
-  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  border: 1px solid var(--navy-ring);
+  border-radius: var(--radius-card);
   box-shadow:
-    0 2px 4px rgb(20 36 62 / 0.08),
-    0 28px 60px -24px rgb(20 36 62 / 0.3);
+    0 2px 4px rgb(16 24 40 / 0.07),
+    0 28px 60px -24px rgb(16 24 40 / 0.24);
 }
 
 .pricing-section {
@@ -1051,7 +1051,7 @@ summary {
   flex-direction: column;
   padding: clamp(1.75rem, 3.5vw, 3rem);
   border-right: 1px solid var(--navy-ring);
-  background: #e5ecf9;
+  background: #eef3fb;
 }
 
 .plan__amount {
@@ -1102,7 +1102,8 @@ summary {
 
 .plan__cancel {
   margin-top: 0.75rem;
-  color: var(--ink-2);
+  /* ink-2 lands at 4.47:1 on the price panel; readable clears AA. */
+  color: var(--ink-readable);
   font-size: 0.75rem;
   line-height: 1.45;
   text-align: center;
@@ -1273,9 +1274,8 @@ summary {
   animation: detail-enter var(--motion-base) var(--ease-out) both;
 }
 
-/* Hero entrance. Four beats at 70ms, inside the landing-hero motion budget.
-   `both` fill means reduced-motion (0.01ms duration) still lands on the end
-   state, so nothing depends on the animation running. */
+/* Hero entrance. Four beats at 70ms. `both` fill means reduced-motion
+   (0.01ms duration) still lands on the end state. */
 @keyframes hero-rise {
   from {
     opacity: 0;
@@ -1394,7 +1394,7 @@ summary {
   padding: var(--space-8);
   border: 1px solid var(--hairline);
   transition: border-color var(--motion-base) var(--ease-out);
-  border-radius: var(--radius-panel);
+  border-radius: var(--radius-card);
   background: var(--canvas);
 }
 
@@ -1767,12 +1767,6 @@ summary {
     display: none;
   }
 
-  .hero__visual::before {
-    inset: calc(clamp(4.5rem, 7vw, 6.5rem) * -1) -3rem -6rem 0;
-    border-radius: 2.5rem 0 0;
-  }
-
-  /* Three facts stop fitting side by side well before the phone breakpoint. */
   .proof-strip__inner > div {
     min-width: 0;
     align-items: flex-start;
@@ -1923,9 +1917,9 @@ summary {
   }
 
   .hero__visual::before {
-    inset: -1rem 0 -4rem;
+    inset: 3rem 0 -4rem;
     border-inline: 0;
-    border-radius: 1.75rem 1.75rem 0 0;
+    border-radius: 1.5rem 1.5rem 0 0;
   }
 
   .phone-stage {
@@ -1951,7 +1945,7 @@ summary {
 
   .proof-strip__inner > div + div {
     border-top: 0;
-    border-left: 1px solid rgb(255 255 255 / 0.14);
+    border-left: 1px solid var(--hairline);
   }
 
   .proof-strip strong {
