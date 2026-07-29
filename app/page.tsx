@@ -313,33 +313,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section why-section" id="why">
-        <div className="container why-grid">
-          <div>
-            <h2>The test is a day of work. The list is the business.</h2>
-          </div>
-          <div className="why-copy">
-            <p>
-              Clean Truck Check turned a one-time inspection into a deadline that
-              comes back every year—and, for OBD trucks, four times a year
-              starting in October 2027. Testers already do the hard part. What
-              gets lost is the follow-up: which truck is due, whose phone number
-              is current, and who booked the next one.
-            </p>
-            <p>
-              Most of that tracking still lives in a spreadsheet, a notebook, or
-              someone’s memory. So the repeat work leaks to whoever calls
-              first. GoTruckCheck exists to close that gap—quietly, from your
-              number, under your business name.
-            </p>
-            <p>
-              We are opening it up to a small group of testers first so the setup
-              gets done properly, one list at a time.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="section data-section" id="data">
         <div className="container">
           <div className="section-heading">

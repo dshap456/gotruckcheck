@@ -36,3 +36,4 @@ A credentialed tester understands within 30 seconds that GoTruckCheck can create
 - **2026-07-29** — Keep the early-access form honest about its plumbing: with no mail provider configured it hands off to the visitor's email client rather than posting into a void. *Why:* a form that silently drops submissions costs more trust than a plain mailto link.
 - **2026-07-29** — Do not use repeated eyebrow labels above marketing headlines or a standalone hero proof strip. *Why:* the headlines and product proof should stand on their own without template-like chrome.
 - **2026-07-29** — Lead directly into the product demonstration instead of adding a standalone product manifesto. *Why:* repeating the value proposition before the screenshots slows the page and weakens the proof.
+- **2026-07-29** — Avoid long narrative “why we built this” sections on the homepage. *Why:* this audience needs concise product proof, pricing, and trust details rather than an extended manifesto.

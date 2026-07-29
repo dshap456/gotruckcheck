@@ -1298,31 +1298,6 @@ summary {
   }
 }
 
-.why-section {
-  background: var(--white);
-  padding-block: 8.5rem 5.5rem;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(3rem, 8vw, 7rem);
-}
-
-.why-grid h2 {
-  margin-top: 0;
-  max-width: 14ch;
-}
-
-.why-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 1.35rem;
-  color: var(--ink-readable);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-}
-
 .data-section {
   border-top: 1px solid var(--hairline);
   background: var(--white);
@@ -1722,7 +1697,6 @@ summary {
   }
 
   .plan,
-  .why-grid,
   .access-grid,
   .desktop-feature__copy {
     grid-template-columns: 1fr;
@@ -1733,7 +1707,6 @@ summary {
     border-bottom: 1px solid var(--navy-ring);
   }
 
-  .why-grid,
   .access-grid {
     gap: var(--space-8);
   }
