@@ -240,7 +240,7 @@ export default function Home() {
                 </span>
               </div>
               <a className="button button--primary plan__cta" href="#early-access">
-                Get early access
+                Get access
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
               <p className="plan__cancel">Cancel anytime.</p>
