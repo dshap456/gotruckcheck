@@ -1,10 +1,7 @@
 export const siteUrl = "https://www.gotruckcheck.com";
 
-/**
- * Single place to change the address every CTA, mailto fallback, and legal
- * page points at. Swap this for a branded address when the domain has mail.
- */
-export const contactEmail = "david.alan.shapiro@gmail.com";
+/** Shared address for every CTA, mailto fallback, and legal page. */
+export const contactEmail = "support@gotruckcheck.com";
 
 export const navItems = [
   { label: "The math", href: "/#the-money" },
