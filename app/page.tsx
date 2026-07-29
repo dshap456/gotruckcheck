@@ -92,6 +92,7 @@ export default function Home() {
                   width={720}
                   height={1512}
                   sizes="(max-width: 760px) 78vw, 410px"
+                  loading="eager"
                   priority
                 />
               </div>
