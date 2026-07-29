@@ -1,13 +1,9 @@
 import Image from "next/image";
 import {
   ArrowRight,
-  BellRing,
-  CalendarCheck2,
   Check,
-  CircleDollarSign,
   Clock3,
   Mail,
-  MessageSquareText,
   Monitor,
   Smartphone,
   Truck,
@@ -99,14 +95,6 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="booking-chip booking-chip--top">
-                <CalendarCheck2 aria-hidden="true" size={18} />
-                Thu, Aug 7 · 8:00 AM
-              </div>
-              <div className="booking-chip booking-chip--bottom">
-                <MessageSquareText aria-hidden="true" size={18} />
-                Customer booked
-              </div>
             </div>
           </div>
         </section>
@@ -147,13 +135,11 @@ export default function Home() {
             <div className="pay-twice">
               <div className="pay-twice__number">01</div>
               <div>
-                <CircleDollarSign aria-hidden="true" />
                 <h3>It pays when you bill monitoring.</h3>
                 <p>Add a recurring line item at the price that fits your market.</p>
               </div>
               <div className="pay-twice__number">02</div>
               <div>
-                <CalendarCheck2 aria-hidden="true" />
                 <h3>It pays again when the next test books.</h3>
                 <p>Every reminder is a sales touch that runs on its own.</p>
               </div>
@@ -219,9 +205,6 @@ export default function Home() {
 
             <div className="feature-row">
               <div className="feature-copy">
-                <span className="feature-icon">
-                  <MessageSquareText aria-hidden="true" />
-                </span>
                 <p className="eyebrow">The text that books the job</p>
                 <h3>Your reminder. Your number. Their next test.</h3>
                 <p>
@@ -265,9 +248,6 @@ export default function Home() {
 
             <div className="feature-row feature-row--reverse">
               <div className="feature-copy">
-                <span className="feature-icon">
-                  <BellRing aria-hidden="true" />
-                </span>
                 <p className="eyebrow">No deadline hunting</p>
                 <h3>Know who is due before they do.</h3>
                 <p>
@@ -318,7 +298,7 @@ export default function Home() {
                   alt="Desktop GoTruckCheck command center with truck deadlines, booking request, and schedule"
                   width={2720}
                   height={1966}
-                  sizes="(max-width: 760px) 1100px, 1180px"
+                  sizes="(max-width: 760px) calc(100vw - 32px), 1180px"
                 />
               </div>
             </div>
@@ -409,7 +389,6 @@ export default function Home() {
                 <Mail aria-hidden="true" size={18} />
                 Put my trucks on the list
               </a>
-              <span>Opens a prefilled early-access email.</span>
             </div>
           </div>
         </section>
