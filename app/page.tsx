@@ -84,19 +84,6 @@ export default function Home() {
           </div>
 
           <RevenueCalculator />
-
-          <div className="pay-twice">
-            <div className="pay-twice__number">01</div>
-            <div>
-              <h3>It pays when you bill monitoring.</h3>
-              <p>Add a recurring line item at the price that fits your market.</p>
-            </div>
-            <div className="pay-twice__number">02</div>
-            <div>
-              <h3>It pays again when the next test books.</h3>
-              <p>Every reminder is a sales touch that runs on its own.</p>
-            </div>
-          </div>
         </div>
       </section>
 

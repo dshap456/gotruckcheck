@@ -687,39 +687,6 @@ summary {
   font-variant-numeric: tabular-nums;
 }
 
-.pay-twice {
-  display: grid;
-  grid-template-columns: auto 1fr auto 1fr;
-  gap: var(--space-6);
-  padding-top: var(--space-8);
-  margin-top: var(--space-12);
-  border-top: 1px solid var(--hairline);
-}
-
-.pay-twice__number {
-  padding-top: 0.15rem;
-  color: var(--navy);
-  font-size: 0.75rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.pay-twice > div:nth-child(even) {
-  padding-right: var(--space-8);
-}
-
-.pay-twice h3 {
-  font-size: 1.1rem;
-}
-
-.pay-twice p {
-  margin-top: 0.55rem;
-  color: var(--ink-2);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
 .how-section {
   border-top: 1px solid var(--hairline);
 }
@@ -1857,11 +1824,6 @@ summary {
 
   .calculator__note {
     text-align: left;
-  }
-
-  .pay-twice {
-    grid-template-columns: auto 1fr;
-    gap: var(--space-6) var(--space-4);
   }
 
   .feature-row,
