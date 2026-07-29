@@ -1,23 +1,26 @@
 :root {
   --navy: #1d4a9b;
   --navy-deep: #173e85;
-  --navy-tint: #edf2fb;
-  --navy-ring: #dfe8f8;
+  --navy-tint: #dfe8f9;
+  --navy-ring: #ccdbf2;
   --green: #2f9e57;
   --green-tint: #e9f6ef;
   --red: #d0453f;
   --amber: #b54708;
   --ink: #14243e;
-  --ink-2: #667085;
+  /* Darkened with the canvas: #667085 fell to 4.2:1 on the deeper ground. */
+  --ink-2: #5c6780;
   --ink-3: #98a2b3;
   --ink-readable: #536074;
-  --canvas: #f5f7f9;
+  --canvas: #eaeef5;
   --app-bg: #f2f4f7;
   --white: #ffffff;
-  --hairline: #e6eaf0;
+  --hairline: #dde3ec;
   --surface-canvas: var(--canvas);
   --surface-raised: var(--white);
   --surface-overlay: #fbfcfd;
+  /* Blue-grey field the product shots sit on, echoing the hero stage. */
+  --stage: #dbe4f4;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -35,6 +38,7 @@
   --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.05), 0 1px 3px rgb(16 24 40 / 0.07);
   --shadow-md: 0 8px 24px rgb(16 24 40 / 0.08), 0 2px 6px rgb(16 24 40 / 0.05);
   --shadow-lg: 0 24px 60px -18px rgb(16 24 40 / 0.24), 0 6px 18px rgb(16 24 40 / 0.08);
+  --shadow-card: 0 1px 2px rgb(20 36 62 / 0.04), 0 12px 28px -18px rgb(20 36 62 / 0.28);
   --motion-fast: 120ms;
   --motion-base: 220ms;
   --motion-slow: 400ms;
@@ -374,8 +378,7 @@ summary {
 .hero__copy {
   position: relative;
   z-index: 2;
-  align-self: start;
-  padding-top: 1.25rem;
+  align-self: center;
 }
 
 .hero__copy h1 {
@@ -427,10 +430,9 @@ summary {
 
 .hero__visual::before {
   position: absolute;
-  inset: 4.5rem -9rem -6rem -2rem;
-  border: 1px solid #dbe5f6;
-  border-radius: 3rem 0 0;
-  background: #e8eefa;
+  inset: calc(clamp(4.5rem, 7vw, 6.5rem) * -1) -9rem -6rem -2rem;
+  border-radius: 3.5rem 0 0;
+  background: var(--navy);
   content: "";
 }
 
@@ -473,14 +475,14 @@ summary {
 }
 
 .phone-stage img {
-  filter: drop-shadow(0 28px 40px rgb(16 24 40 / 0.18));
+  filter: drop-shadow(0 30px 48px rgb(9 20 40 / 0.42));
 }
 
 .proof-strip {
   position: relative;
   z-index: 5;
-  border-block: 1px solid var(--hairline);
-  background: var(--white);
+  background: var(--ink);
+  color: var(--white);
 }
 
 .proof-strip__inner {
@@ -498,10 +500,11 @@ summary {
 }
 
 .proof-strip__inner > div + div {
-  border-left: 1px solid var(--hairline);
+  border-left: 1px solid rgb(255 255 255 / 0.14);
 }
 
 .proof-strip strong {
+  white-space: nowrap;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: 1.65rem;
   font-variant-numeric: tabular-nums;
@@ -511,7 +514,7 @@ summary {
 }
 
 .proof-strip span {
-  color: var(--ink-2);
+  color: #a8b6cc;
   font-size: 0.875rem;
 }
 
@@ -556,7 +559,7 @@ summary {
   margin-top: var(--space-16);
   border: 1px solid var(--navy-ring);
   border-radius: var(--radius-panel);
-  background: #eef3fb;
+  background: #e5ecf9;
   box-shadow:
     0 1px 2px rgb(16 24 40 / 0.04),
     0 18px 48px -28px rgb(23 62 133 / 0.28);
@@ -600,14 +603,14 @@ summary {
   background: linear-gradient(
     to right,
     var(--navy) 0 var(--range-progress, 50%),
-    #d7dfeb var(--range-progress, 50%) 100%
+    #c2d0e8 var(--range-progress, 50%) 100%
   );
 }
 
 .calculator__range::-moz-range-track {
   height: 0.5rem;
   border-radius: 999px;
-  background: #d7dfeb;
+  background: #c2d0e8;
 }
 
 .calculator__range::-moz-range-progress {
@@ -678,7 +681,7 @@ summary {
   border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
   background: var(--white);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
 }
 
 .math-row > span {
@@ -905,12 +908,8 @@ summary {
   align-items: end;
   gap: 1.5rem;
   padding: 2.5rem 2.25rem 0;
-  border: 1px solid var(--navy-ring);
-  border-radius: var(--radius-panel);
-  background: #f3f5f8;
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 0.72),
-    0 18px 45px -34px rgb(16 24 40 / 0.32);
+  border-radius: var(--radius-feature);
+  background: var(--stage);
   overflow: hidden;
 }
 
@@ -924,7 +923,7 @@ summary {
 
 .phone-pair img,
 .single-phone img {
-  filter: drop-shadow(0 26px 36px rgb(16 24 40 / 0.18));
+  filter: drop-shadow(0 26px 40px rgb(20 36 62 / 0.26));
 }
 
 .single-phone {
@@ -933,12 +932,8 @@ summary {
   height: 28.5rem;
   justify-content: center;
   padding-top: 2.5rem;
-  border: 1px solid var(--navy-ring);
-  border-radius: var(--radius-panel);
-  background: #f3f5f8;
-  box-shadow:
-    inset 0 0 0 1px rgb(255 255 255 / 0.72),
-    0 18px 45px -34px rgb(16 24 40 / 0.32);
+  border-radius: var(--radius-feature);
+  background: var(--stage);
   overflow: hidden;
 }
 
@@ -1019,13 +1014,18 @@ summary {
 .desktop-shot {
   width: 100%;
   max-width: 100%;
+  padding: clamp(1rem, 2.5vw, 2.25rem) clamp(1rem, 2.5vw, 2.25rem) 0;
   margin-top: var(--space-12);
   overflow: hidden;
-  border: 1px solid var(--navy-ring);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-feature);
+  background: var(--stage);
+}
+
+.desktop-shot img {
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
   box-shadow:
-    0 2px 4px rgb(16 24 40 / 0.07),
-    0 28px 60px -24px rgb(16 24 40 / 0.24);
+    0 2px 4px rgb(20 36 62 / 0.08),
+    0 28px 60px -24px rgb(20 36 62 / 0.3);
 }
 
 .pricing-section {
@@ -1051,7 +1051,7 @@ summary {
   flex-direction: column;
   padding: clamp(1.75rem, 3.5vw, 3rem);
   border-right: 1px solid var(--navy-ring);
-  background: #eef3fb;
+  background: #e5ecf9;
 }
 
 .plan__amount {
@@ -1273,6 +1273,45 @@ summary {
   animation: detail-enter var(--motion-base) var(--ease-out) both;
 }
 
+/* Hero entrance. Four beats at 70ms, inside the landing-hero motion budget.
+   `both` fill means reduced-motion (0.01ms duration) still lands on the end
+   state, so nothing depends on the animation running. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero__copy > * {
+  animation: hero-rise 620ms var(--ease-out) both;
+}
+
+.hero__copy > *:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.hero__copy > *:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.hero__copy > *:nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.hero__copy > *:nth-child(5) {
+  animation-delay: 280ms;
+}
+
+.hero__visual {
+  animation: hero-rise 720ms var(--ease-out) 140ms both;
+}
+
 .motion-ready [data-reveal="up"],
 .motion-ready [data-reveal="stagger"] > * {
   opacity: 0.01;
@@ -1355,7 +1394,7 @@ summary {
   padding: var(--space-8);
   border: 1px solid var(--hairline);
   transition: border-color var(--motion-base) var(--ease-out);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius-panel);
   background: var(--canvas);
 }
 
@@ -1728,6 +1767,21 @@ summary {
     display: none;
   }
 
+  .hero__visual::before {
+    inset: calc(clamp(4.5rem, 7vw, 6.5rem) * -1) -3rem -6rem 0;
+    border-radius: 2.5rem 0 0;
+  }
+
+  /* Three facts stop fitting side by side well before the phone breakpoint. */
+  .proof-strip__inner > div {
+    min-width: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    padding-inline: 1.25rem;
+  }
+
   .nav__toggle {
     display: inline-flex;
   }
@@ -1845,7 +1899,6 @@ summary {
 
   .hero__copy {
     align-self: auto;
-    padding-top: 0;
   }
 
   .hero__copy h1 {
@@ -1870,9 +1923,9 @@ summary {
   }
 
   .hero__visual::before {
-    inset: 3rem 0 -4rem;
+    inset: -1rem 0 -4rem;
     border-inline: 0;
-    border-radius: 1.5rem 1.5rem 0 0;
+    border-radius: 1.75rem 1.75rem 0 0;
   }
 
   .phone-stage {
@@ -1892,23 +1945,17 @@ summary {
   }
 
   .proof-strip__inner > div {
-    min-width: 0;
     min-height: 5.75rem;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.15rem;
     padding-inline: 0.65rem;
   }
 
   .proof-strip__inner > div + div {
     border-top: 0;
-    border-left: 1px solid var(--hairline);
+    border-left: 1px solid rgb(255 255 255 / 0.14);
   }
 
   .proof-strip strong {
     font-size: 1.25rem;
-    white-space: nowrap;
   }
 
   .proof-strip span {
