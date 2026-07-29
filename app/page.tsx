@@ -75,11 +75,7 @@ export default function Home() {
             <div>
               <h2>Add compliance monitoring to every invoice.</h2>
             </div>
-            <p>
-              GoTruckCheck is your wholesale cost. You set the retail price. The
-              monthly monitoring fee can pay for the system before a reminder
-              books a single test.
-            </p>
+            <p>GoTruckCheck is your wholesale cost. You set the retail price.</p>
           </div>
 
           <RevenueCalculator />
