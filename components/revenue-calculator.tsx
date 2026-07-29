@@ -33,7 +33,6 @@ export function RevenueCalculator() {
     >
       <div className="calculator__top">
         <div>
-          <p className="eyebrow">Run your numbers</p>
           <h3 id="calculator-title">What could monitoring add?</h3>
         </div>
         <output className="truck-count" htmlFor="truck-count">

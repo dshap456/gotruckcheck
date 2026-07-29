@@ -379,7 +379,7 @@ summary {
 
 .hero__copy h1 {
   max-width: 14ch;
-  margin-top: 1.25rem;
+  margin-top: 0;
   font-size: clamp(2.75rem, 5vw, 4.5rem);
   line-height: 0.99;
 }
@@ -475,47 +475,8 @@ summary {
   filter: drop-shadow(0 28px 40px rgb(16 24 40 / 0.18));
 }
 
-.proof-strip {
-  position: relative;
-  z-index: 5;
-  border-block: 1px solid var(--hairline);
-  background: var(--white);
-}
-
-.proof-strip__inner {
-  display: grid;
-  min-height: 6.5rem;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-}
-
-.proof-strip__inner > div {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.65rem;
-}
-
-.proof-strip__inner > div + div {
-  border-left: 1px solid var(--hairline);
-}
-
-.proof-strip strong {
-  white-space: nowrap;
-  font-family: var(--font-display), Montserrat, sans-serif;
-  font-size: 1.65rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.proof-strip span {
-  color: var(--ink-2);
-  font-size: 0.875rem;
-}
-
 .money-section {
+  border-top: 1px solid var(--hairline);
   background: var(--white);
 }
 
@@ -524,7 +485,7 @@ summary {
 }
 
 .section-heading h2 {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .section-heading > p:last-child {
@@ -570,7 +531,7 @@ summary {
 }
 
 .calculator__top h3 {
-  margin-top: 0.7rem;
+  margin-top: 0;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
 
@@ -776,7 +737,7 @@ summary {
 }
 
 .how-intro h2 {
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .how-intro > p:last-child {
@@ -861,7 +822,7 @@ summary {
 
 .feature-copy h3 {
   max-width: 13ch;
-  margin-top: 0.8rem;
+  margin-top: 0;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(1.8rem, 3.5vw, 2.7rem);
   font-weight: 800;
@@ -989,24 +950,13 @@ summary {
   gap: var(--space-16);
 }
 
-.desktop-feature__lead .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
 .desktop-feature__copy h3 {
   max-width: 15ch;
-  margin-top: 1rem;
+  margin-top: 0;
   font-family: var(--font-display), Montserrat, sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -0.035em;
-}
-
-.desktop-feature__copy svg {
-  width: 1.05rem;
-  color: var(--navy);
 }
 
 .desktop-feature__copy > p {
@@ -1058,7 +1008,7 @@ summary {
   display: flex;
   align-items: flex-start;
   gap: 0.9rem;
-  margin-top: 1rem;
+  margin-top: 0;
   color: var(--navy);
   font-family: var(--font-display), Montserrat, sans-serif;
   font-weight: 800;
@@ -1164,13 +1114,9 @@ summary {
   width: 1.5rem;
 }
 
-.deadline-card .eyebrow {
-  color: #a9c1ee;
-}
-
 .deadline-card h2 {
   max-width: 18ch;
-  margin-top: 0.8rem;
+  margin-top: 0;
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
@@ -1204,7 +1150,7 @@ summary {
 
 .faq-grid h2 {
   max-width: 10ch;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .faq-list details {
@@ -1364,7 +1310,7 @@ summary {
 }
 
 .why-grid h2 {
-  margin-top: 1rem;
+  margin-top: 0;
   max-width: 14ch;
 }
 
@@ -1429,12 +1375,8 @@ summary {
   gap: clamp(2.5rem, 6vw, 5rem);
 }
 
-.access-section .eyebrow {
-  color: #c4d3ef;
-}
-
 .access-copy h2 {
-  margin-top: 0.8rem;
+  margin-top: 0;
 }
 
 .access-copy > p {
@@ -1767,15 +1709,6 @@ summary {
     display: none;
   }
 
-  .proof-strip__inner > div {
-    min-width: 0;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.15rem;
-    padding-inline: 1.25rem;
-  }
-
   .nav__toggle {
     display: inline-flex;
   }
@@ -1875,9 +1808,7 @@ summary {
   }
 
   .button--nav {
-    min-height: 2.5rem;
-    padding-inline: 0.75rem;
-    font-size: 0.775rem;
+    display: none;
   }
 
   .hero {
@@ -1931,30 +1862,6 @@ summary {
 
   .hero__caption {
     top: 0.5rem;
-  }
-
-  .proof-strip__inner {
-    min-height: 5.75rem;
-    grid-template-columns: 0.75fr 1.35fr 0.8fr;
-  }
-
-  .proof-strip__inner > div {
-    min-height: 5.75rem;
-    padding-inline: 0.65rem;
-  }
-
-  .proof-strip__inner > div + div {
-    border-top: 0;
-    border-left: 1px solid var(--hairline);
-  }
-
-  .proof-strip strong {
-    font-size: 1.25rem;
-  }
-
-  .proof-strip span {
-    font-size: 0.6875rem;
-    line-height: 1.35;
   }
 
   .section-heading--split {

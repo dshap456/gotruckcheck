@@ -5,7 +5,6 @@ import {
   Clock3,
   Download,
   Lock,
-  Monitor,
   ShieldCheck,
   Smartphone,
   Truck,
@@ -29,12 +28,11 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__grid">
           <div className="hero__copy">
-            <p className="eyebrow">Built for Clean Truck Check testers</p>
             <h1>Turn every truck you’ve tested into monthly revenue.</h1>
             <p className="hero__lede">
-              Track every deadline. Send automatic texts from your number. Let
-              customers book with a tap. <strong>$2 per truck a month.</strong>{" "}
-              Most testers can bill it back at $5–10.
+              Track every deadline. Let customers book with a tap.{" "}
+              <strong>$2 per truck a month.</strong> Most testers can bill it back
+              at $5–10.
             </p>
             <div className="hero__actions">
               <a className="button button--primary" href="#early-access">
@@ -72,28 +70,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof-strip" aria-label="Product facts">
-        <div className="container proof-strip__inner">
-          <div>
-            <strong>$2</strong>
-            <span>per truck / month</span>
-          </div>
-          <div>
-            <strong>60 · 30 · 15</strong>
-            <span>day reminder options</span>
-          </div>
-          <div>
-            <strong>0</strong>
-            <span>apps for customers to install</span>
-          </div>
-        </div>
-      </section>
-
       <section className="section money-section" id="the-money">
         <div className="container">
           <div className="section-heading section-heading--split">
             <div>
-              <p className="eyebrow">A new service to sell</p>
               <h2>Add compliance monitoring to every invoice.</h2>
             </div>
             <p>
@@ -123,7 +103,6 @@ export default function Home() {
       <section className="section how-section" id="how-it-works">
         <div className="container how-grid">
           <div className="how-intro">
-            <p className="eyebrow">How it works</p>
             <h2>You keep testing. The follow‑up runs itself.</h2>
             <p>
               No long setup. No new app for your fleets. We get the list in, watch
@@ -168,7 +147,6 @@ export default function Home() {
       <section className="section product-section" id="product">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">The machine behind the service</p>
             <h2>You sell the compliance. The alerts sell the appointments.</h2>
             <p>
               Phone-first for the field. A full command center when you want the
@@ -178,7 +156,6 @@ export default function Home() {
 
           <div className="feature-row">
             <div className="feature-copy">
-              <p className="eyebrow">The text that books the job</p>
               <h3>Your reminder. Your number. Their next test.</h3>
               <p>
                 Texts go out at the intervals you choose. The booking link is
@@ -220,7 +197,6 @@ export default function Home() {
 
           <div className="feature-row feature-row--reverse">
             <div className="feature-copy">
-              <p className="eyebrow">No deadline hunting</p>
               <h3>Know who is due before they do.</h3>
               <p>
                 Open the phone and see what’s overdue, what’s next, and
@@ -254,10 +230,6 @@ export default function Home() {
           <div className="desktop-feature">
             <div className="desktop-feature__copy">
               <div className="desktop-feature__lead">
-                <p className="eyebrow">
-                  <Monitor aria-hidden="true" />
-                  For the bigger screen
-                </p>
                 <h3>The whole week and every deadline, in one place.</h3>
               </div>
               <p>
@@ -282,7 +254,6 @@ export default function Home() {
       <section className="section pricing-section" id="pricing">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Pricing</p>
             <h2>One price. Every feature. No contract.</h2>
             <p>
               You pay for the trucks you are watching this month—nothing else.
@@ -292,7 +263,6 @@ export default function Home() {
 
           <div className="plan" data-reveal="up">
             <div className="plan__price">
-              <p className="eyebrow">Per truck</p>
               <div className="plan__amount">
                 <span className="plan__currency">$</span>
                 <span className="plan__figure">2</span>
@@ -332,7 +302,6 @@ export default function Home() {
             <Truck aria-hidden="true" />
           </div>
           <div>
-            <p className="eyebrow">More testing is coming</p>
             <h2>Be ready before OBD trucks move to four tests a year.</h2>
             <p>
               CARB says quarterly testing for OBD-equipped vehicles begins in
@@ -355,7 +324,6 @@ export default function Home() {
       <section className="section why-section" id="why">
         <div className="container why-grid">
           <div>
-            <p className="eyebrow">Why we built this</p>
             <h2>The test is a day of work. The list is the business.</h2>
           </div>
           <div className="why-copy">
@@ -383,7 +351,6 @@ export default function Home() {
       <section className="section data-section" id="data">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Your data</p>
             <h2>Your customer list stays your customer list.</h2>
             <p>
               You are handing over the contact list your business runs on. Here is
@@ -423,7 +390,6 @@ export default function Home() {
       <section className="section faq-section" id="questions">
         <div className="container faq-grid">
           <div className="faq-intro">
-            <p className="eyebrow">Straight answers</p>
             <h2>Before you put a truck on the list.</h2>
           </div>
           <div className="faq-list">
@@ -443,7 +409,6 @@ export default function Home() {
       <section className="access-section" id="early-access">
         <div className="container access-grid">
           <div className="access-copy">
-            <p className="eyebrow">Early access</p>
             <h2>Put the follow‑up on autopilot.</h2>
             <p>
               Tell us a little about your operation. We’ll load your first
