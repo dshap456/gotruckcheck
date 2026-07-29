@@ -42,10 +42,6 @@ export default function Home() {
                 Put my trucks on the list
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
-              <a className="text-link" href="#the-money">
-                See the math
-                <ArrowRight aria-hidden="true" size={16} />
-              </a>
             </div>
             <p className="hero__trust">
               <Check aria-hidden="true" size={16} />
