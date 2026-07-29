@@ -674,19 +674,6 @@ summary {
   font-size: 1.5rem;
 }
 
-.calculator__note {
-  margin-top: var(--space-6);
-  color: var(--ink-readable);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.calculator__note strong {
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
-
 .how-section {
   border-top: 1px solid var(--hairline);
 }
@@ -1820,10 +1807,6 @@ summary {
 
   .math-symbol {
     transform: rotate(90deg);
-  }
-
-  .calculator__note {
-    text-align: left;
   }
 
   .feature-row,

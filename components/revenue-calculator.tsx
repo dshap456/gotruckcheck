@@ -19,8 +19,6 @@ export function RevenueCalculator() {
       cost: trucks * 2,
       billedLow: trucks * 5,
       billedHigh: trucks * 10,
-      marginLow: trucks * 3,
-      marginHigh: trucks * 8,
     }),
     [trucks],
   );
@@ -82,13 +80,6 @@ export function RevenueCalculator() {
         </div>
       </div>
 
-      <p className="calculator__note">
-        That leaves{" "}
-        <strong>
-          {money.format(values.marginLow)}–{money.format(values.marginHigh)}
-        </strong>{" "}
-        before the repeat tests the reminders book. You set your own customer price.
-      </p>
     </div>
   );
 }
