@@ -68,7 +68,7 @@ export function HomeStructuredData() {
               "GoTruckCheck tracks Clean Truck Check deadlines for every VIN, sends automatic SMS and email reminders from the tester's own business number, and lets fleet customers book their next test with a tap.",
             offers: {
               "@type": "Offer",
-              price: "2.00",
+              price: "1.79",
               priceCurrency: "USD",
               category: "subscription",
               description: "Per truck, per month. No contract and no setup fee.",

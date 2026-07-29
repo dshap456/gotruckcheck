@@ -61,7 +61,7 @@ export default function OpenGraphImage() {
             You sell the compliance. The alerts sell the appointments.
           </div>
           <div style={{ display: "flex", gap: 16, fontSize: 24, color: "#667085" }}>
-            <span>$2 per truck / month</span>
+            <span>$1.79 per truck / month</span>
             <span>·</span>
             <span>Automatic texts from your number</span>
           </div>

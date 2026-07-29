@@ -52,7 +52,7 @@ export default function TermsPage() {
         <h2>Early access</h2>
         <p>
           Early access is offered at our discretion and may change or end. Pricing
-          described on this site—$2 per truck per month—applies to the early-access
+          described on this site—$1.79 per truck per month—applies to the early-access
           program and may be revised on notice before it takes effect.
         </p>
 

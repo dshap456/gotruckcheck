@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | GoTruckCheck",
   },
   description:
-    "Deadline tracking, automatic reminders from your number, and tap-to-book scheduling for California Clean Truck Check testers. $2 per truck a month, no contract.",
+    "Deadline tracking, automatic reminders from your number, and tap-to-book scheduling for California Clean Truck Check testers. $1.79 per truck a month, no contract.",
   applicationName: "GoTruckCheck",
   keywords: [
     "Clean Truck Check",

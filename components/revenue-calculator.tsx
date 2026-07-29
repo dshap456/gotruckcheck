@@ -4,11 +4,13 @@ import { useMemo, useState } from "react";
 
 const MIN = 25;
 const MAX = 500;
+const PRICE_PER_TRUCK = 1.79;
 
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
-  maximumFractionDigits: 0,
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 2,
 });
 
 export function RevenueCalculator() {
@@ -16,7 +18,7 @@ export function RevenueCalculator() {
 
   const values = useMemo(
     () => ({
-      cost: trucks * 2,
+      cost: trucks * PRICE_PER_TRUCK,
       billedLow: trucks * 5,
       billedHigh: trucks * 10,
     }),
@@ -66,7 +68,7 @@ export function RevenueCalculator() {
         <div className="math-row">
           <span>Your GoTruckCheck cost</span>
           <strong>{money.format(values.cost)} / month</strong>
-          <small>{trucks} × $2</small>
+          <small>{trucks} × $1.79</small>
         </div>
         <div className="math-symbol" aria-hidden="true">
           →

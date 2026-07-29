@@ -34,7 +34,7 @@ export default function Home() {
             </h1>
             <p className="hero__lede">
               Track every deadline. Let customers book with a tap.{" "}
-              <strong>$2 per truck a month.</strong> Most testers can bill it back
+              <strong>$1.79 per truck a month.</strong> Most testers can bill it back
               at $5–10.
             </p>
             <div className="hero__actions">
@@ -228,7 +228,7 @@ export default function Home() {
             <div className="plan__price">
               <div className="plan__amount">
                 <span className="plan__currency">$</span>
-                <span className="plan__figure">2</span>
+                <span className="plan__figure">1.79</span>
                 <span className="plan__period">
                   per truck
                   <br />
@@ -341,7 +341,7 @@ export default function Home() {
             <h2>Put the follow‑up on autopilot.</h2>
             <ul className="access-points">
               <li>
-                <Check aria-hidden="true" /> $2 per truck a month, no contract
+                <Check aria-hidden="true" /> $1.79 per truck a month, no contract
               </li>
               <li>
                 <Check aria-hidden="true" /> We load your first list for you

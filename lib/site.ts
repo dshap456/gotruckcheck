@@ -25,7 +25,7 @@ export const faqs = [
   {
     question: "What does it cost, exactly?",
     answer:
-      "$2 per truck per month. One price, every feature. No setup fee, no per-message charge, no minimum, and no contract.",
+      "$1.79 per truck per month. One price, every feature. No setup fee, no per-message charge, no minimum, and no contract.",
   },
   {
     question: "What if a customer sells a truck?",
