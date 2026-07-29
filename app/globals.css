@@ -809,8 +809,7 @@ summary {
   transform: translateY(5rem);
 }
 
-.phone-pair img,
-.single-phone img {
+.phone-pair img {
   filter: drop-shadow(0 26px 36px rgb(16 24 40 / 0.18));
 }
 
@@ -830,8 +829,10 @@ summary {
 }
 
 .single-phone img {
+  align-self: flex-start;
   width: 19rem;
   max-width: 68%;
+  height: auto;
 }
 
 .mini-facts {
