@@ -51,10 +51,6 @@ export default function Home() {
           </div>
 
           <div className="hero__visual" aria-label="Example customer reminder text">
-            <div className="hero__caption">
-              <span className="status-dot" aria-hidden="true" />
-              Sent from your business number
-            </div>
             <div className="phone-stage">
               <Image
                 src="/product/text-message-loop.png"

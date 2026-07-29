@@ -433,34 +433,6 @@ summary {
   content: "";
 }
 
-.hero__caption {
-  position: absolute;
-  z-index: 3;
-  top: 1rem;
-  left: 50%;
-  display: flex;
-  min-height: 2.5rem;
-  align-items: center;
-  gap: 0.55rem;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--white);
-  box-shadow: var(--shadow-sm);
-  color: var(--ink-2);
-  font-size: 0.75rem;
-  font-weight: 600;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-
-.status-dot {
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: var(--green);
-}
-
 .phone-stage {
   position: absolute;
   z-index: 2;
@@ -1771,10 +1743,6 @@ summary {
     bottom: -7.25rem;
     width: min(23rem, 84vw);
     transform: translateX(50%) rotate(0.5deg);
-  }
-
-  .hero__caption {
-    top: 0.5rem;
   }
 
   .section-heading--split {
