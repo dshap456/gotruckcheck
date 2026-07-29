@@ -247,9 +247,6 @@ export default function Home() {
                   per month
                 </span>
               </div>
-              <p className="plan__note">
-                Billed monthly. No setup fee, no per-message charge, no minimum.
-              </p>
               <a className="button button--primary plan__cta" href="#early-access">
                 Get early access
                 <ArrowRight aria-hidden="true" size={18} />
