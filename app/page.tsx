@@ -146,14 +146,6 @@ export default function Home() {
 
       <section className="section product-section" id="product">
         <div className="container">
-          <div className="section-heading">
-            <h2>You sell the compliance. The alerts sell the appointments.</h2>
-            <p>
-              Phone-first for the field. A full command center when you want the
-              whole business on one screen.
-            </p>
-          </div>
-
           <div className="feature-row">
             <div className="feature-copy">
               <h3>Your reminder. Your number. Their next test.</h3>

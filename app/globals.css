@@ -796,16 +796,16 @@ summary {
   padding-block: 6.5rem 7.5rem;
 }
 
-.product-section .section-heading {
-  margin-bottom: 5rem;
-}
-
 .feature-row {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   align-items: center;
   gap: clamp(3rem, 7vw, 6rem);
   margin-top: 5rem;
+}
+
+.product-section .container > .feature-row:first-child {
+  margin-top: 0;
 }
 
 .feature-row--reverse {
@@ -1889,10 +1889,6 @@ summary {
   .pay-twice {
     grid-template-columns: auto 1fr;
     gap: var(--space-6) var(--space-4);
-  }
-
-  .product-section .section-heading {
-    margin-bottom: var(--space-16);
   }
 
   .feature-row,
