@@ -234,10 +234,6 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <h2>One price. Every feature. No contract.</h2>
-            <p>
-              You pay for the trucks you are watching this month—nothing else.
-              Archive a truck and it comes off the bill the same day.
-            </p>
           </div>
 
           <div className="plan" data-reveal="up">
