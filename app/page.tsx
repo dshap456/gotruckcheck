@@ -87,10 +87,7 @@ export default function Home() {
         <div className="container how-grid">
           <div className="how-intro">
             <h2>You keep testing. The follow‑up runs itself.</h2>
-            <p>
-              No long setup. No new app for your fleets. We get the list in, watch
-              the dates, and keep the jobs moving back to you.
-            </p>
+            <p>No long setup. No new app for your fleets.</p>
           </div>
           <ol className="steps" data-reveal="stagger">
             <li>
