@@ -2,6 +2,9 @@
 
 import { useEffect } from "react";
 
+/** Nothing may stay hidden longer than this, whatever the observer does. */
+const SAFETY_MS = 4000;
+
 export function RevealController() {
   useEffect(() => {
     const root = document.documentElement;
@@ -9,11 +12,14 @@ export function RevealController() {
       document.querySelectorAll<HTMLElement>("[data-reveal]"),
     );
 
+    const revealAll = () =>
+      elements.forEach((element) => element.classList.add("is-revealed"));
+
     if (
       !("IntersectionObserver" in window) ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      elements.forEach((element) => element.classList.add("is-revealed"));
+      revealAll();
       return;
     }
 
@@ -36,7 +42,15 @@ export function RevealController() {
 
     elements.forEach((element) => observer.observe(element));
 
+    // Fast scrolling, print, and headless capture can all outrun the observer.
+    // Reveal-on-scroll is decoration; the content must never depend on it.
+    const safety = window.setTimeout(() => {
+      revealAll();
+      observer.disconnect();
+    }, SAFETY_MS);
+
     return () => {
+      window.clearTimeout(safety);
       observer.disconnect();
       root.classList.remove("motion-ready");
     };

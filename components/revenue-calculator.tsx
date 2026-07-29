@@ -2,6 +2,9 @@
 
 import { useMemo, useState } from "react";
 
+const MIN = 25;
+const MAX = 500;
+
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -45,15 +48,21 @@ export function RevenueCalculator() {
         id="truck-count"
         className="calculator__range"
         type="range"
-        min="25"
-        max="500"
+        min={MIN}
+        max={MAX}
         step="25"
         value={trucks}
+        // WebKit cannot paint a filled track on its own; feed it the position.
+        style={
+          {
+            "--range-progress": `${((trucks - MIN) / (MAX - MIN)) * 100}%`,
+          } as React.CSSProperties
+        }
         onChange={(event) => setTrucks(Number(event.target.value))}
       />
       <div className="range-labels" aria-hidden="true">
-        <span>25</span>
-        <span>500</span>
+        <span>{MIN}</span>
+        <span>{MAX}</span>
       </div>
 
       <div className="calculator__math">

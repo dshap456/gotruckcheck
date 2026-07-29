@@ -3,418 +3,465 @@ import {
   ArrowRight,
   Check,
   Clock3,
-  Mail,
+  Download,
+  Lock,
   Monitor,
+  ShieldCheck,
   Smartphone,
   Truck,
 } from "lucide-react";
 import { RevenueCalculator } from "@/components/revenue-calculator";
 import { RevealController } from "@/components/reveal-controller";
-
-const earlyAccessHref =
-  "mailto:david.alan.shapiro@gmail.com?subject=GoTruckCheck%20early%20access&body=Business%20name%3A%0AApprox.%20trucks%20under%20watch%3A%0APhone%3A";
-
-const navItems = [
-  { label: "The money", href: "#the-money" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "See the product", href: "#product" },
-  { label: "Questions", href: "#questions" },
-];
+import { EarlyAccessForm, type SubmitMode } from "@/components/early-access-form";
+import { HomeStructuredData } from "@/components/structured-data";
+import { faqs, pricingIncludes } from "@/lib/site";
 
 export default function Home() {
+  // With no mail provider configured the form hands off to the visitor's email
+  // app rather than posting into a void.
+  const submitMode: SubmitMode = process.env.RESEND_API_KEY ? "api" : "mailto";
+
   return (
     <>
-      <a className="skip-link" href="#main">
-        Skip to main content
-      </a>
+      <HomeStructuredData />
       <RevealController />
 
-      <header className="site-header">
-        <div className="container nav">
-          <a className="brand" href="#" aria-label="GoTruckCheck home">
-            <Image
-              src="/brand/gotruckcheck-logo.png"
-              alt="GoTruckCheck"
-              width={787}
-              height={148}
-              priority
-            />
-          </a>
-          <nav aria-label="Main navigation">
-            <ul className="nav__links">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href}>{item.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a className="button button--nav" href={earlyAccessHref}>
-            Get early access
-          </a>
-        </div>
-      </header>
-
-      <main id="main">
-        <section className="hero">
-          <div className="container hero__grid">
-            <div className="hero__copy">
-              <p className="eyebrow">Built for Clean Truck Check testers</p>
-              <h1>Turn every truck you&apos;ve tested into monthly revenue.</h1>
-              <p className="hero__lede">
-                Track every deadline. Send automatic texts from your number. Let
-                customers book with a tap. <strong>$2 per truck a month.</strong>{" "}
-                Most testers can bill it back at $5–10.
-              </p>
-              <div className="hero__actions">
-                <a className="button button--primary" href={earlyAccessHref}>
-                  Put my trucks on the list
-                  <ArrowRight aria-hidden="true" size={18} />
-                </a>
-                <a className="text-link" href="#the-money">
-                  See the money math
-                  <ArrowRight aria-hidden="true" size={16} />
-                </a>
-              </div>
-              <p className="hero__trust">
-                <Check aria-hidden="true" size={16} />
-                No contract. Your customers install nothing.
-              </p>
-            </div>
-
-            <div className="hero__visual" aria-label="Example customer reminder text">
-              <div className="hero__caption">
-                <span className="status-dot" aria-hidden="true" />
-                Sent from your business number
-              </div>
-              <div className="phone-stage">
-                <Image
-                  src="/product/text-message-loop.png"
-                  alt="Text conversation showing an automatic deadline reminder turning into a booked truck test"
-                  width={720}
-                  height={1512}
-                  sizes="(max-width: 760px) 78vw, 410px"
-                  loading="eager"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="proof-strip" aria-label="Product facts">
-          <div className="container proof-strip__inner">
-            <div>
-              <strong>$2</strong>
-              <span>per truck / month</span>
-            </div>
-            <div>
-              <strong>60 · 30 · 15</strong>
-              <span>day reminder options</span>
-            </div>
-            <div>
-              <strong>0</strong>
-              <span>apps for customers to install</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="section money-section" id="the-money">
-          <div className="container">
-            <div className="section-heading section-heading--split">
-              <div>
-                <p className="eyebrow">A new service to sell</p>
-                <h2>Add compliance monitoring to every invoice.</h2>
-              </div>
-              <p>
-                GoTruckCheck is your wholesale cost. You set the retail price.
-                The monthly monitoring fee can pay for the system before a
-                reminder books a single test.
-              </p>
-            </div>
-
-            <RevenueCalculator />
-
-            <div className="pay-twice">
-              <div className="pay-twice__number">01</div>
-              <div>
-                <h3>It pays when you bill monitoring.</h3>
-                <p>Add a recurring line item at the price that fits your market.</p>
-              </div>
-              <div className="pay-twice__number">02</div>
-              <div>
-                <h3>It pays again when the next test books.</h3>
-                <p>Every reminder is a sales touch that runs on its own.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section how-section" id="how-it-works">
-          <div className="container how-grid">
-            <div className="how-intro">
-              <p className="eyebrow">How it works</p>
-              <h2>You keep testing. The follow-up runs itself.</h2>
-              <p>
-                No long setup. No new app for your fleets. We get the list in,
-                watch the dates, and keep the jobs moving back to you.
-              </p>
-            </div>
-            <ol className="steps" data-reveal="up">
-              <li>
-                <span className="step-number">1</span>
-                <div>
-                  <h3>Send us your customer list</h3>
-                  <p>
-                    A spreadsheet, photos of your notebook—whatever you have.
-                    We&apos;ll load it by tomorrow.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <span className="step-number">2</span>
-                <div>
-                  <h3>We watch every deadline</h3>
-                  <p>
-                    Each VIN is checked against Clean Truck Check records
-                    nightly, so your list stays ready to work.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <span className="step-number">3</span>
-                <div>
-                  <h3>Reminders send from your number</h3>
-                  <p>
-                    Your name, your voice. Customers pick a time with a tap.
-                    You confirm.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <section className="section product-section" id="product">
-          <div className="container">
-            <div className="section-heading">
-              <p className="eyebrow">The machine behind the service</p>
-              <h2>You sell the compliance. The alerts sell the appointments.</h2>
-              <p>
-                Phone-first for the field. A full command center when you want
-                the whole business on one screen.
-              </p>
-            </div>
-
-            <div className="feature-row">
-              <div className="feature-copy">
-                <p className="eyebrow">The text that books the job</p>
-                <h3>Your reminder. Your number. Their next test.</h3>
-                <p>
-                  Texts go out at the intervals you choose. The booking link is
-                  branded as your business. A reply or tap lands on your
-                  schedule.
-                </p>
-                <ul className="check-list">
-                  <li>
-                    <Check aria-hidden="true" /> Automatic SMS and email reminders
-                  </li>
-                  <li>
-                    <Check aria-hidden="true" /> Tap to book, reschedule, or cancel
-                  </li>
-                  <li>
-                    <Check aria-hidden="true" /> Nothing for your customer to install
-                  </li>
-                </ul>
-              </div>
-              <div className="phone-pair" data-reveal="up">
-                <figure>
-                  <Image
-                    src="/product/text-message-loop.png"
-                    alt="Automatic reminder text from a tester's business number"
-                    width={720}
-                    height={1512}
-                    sizes="(max-width: 760px) 48vw, 310px"
-                  />
-                </figure>
-                <figure>
-                  <Image
-                    src="/product/customer-booking.png"
-                    alt="Customer booking page for choosing trucks, date, and time"
-                    width={720}
-                    height={1512}
-                    sizes="(max-width: 760px) 48vw, 310px"
-                  />
-                </figure>
-              </div>
-            </div>
-
-            <div className="feature-row feature-row--reverse">
-              <div className="feature-copy">
-                <p className="eyebrow">No deadline hunting</p>
-                <h3>Know who is due before they do.</h3>
-                <p>
-                  Open the phone and see what&apos;s overdue, what&apos;s next,
-                  and what already booked. That&apos;s the call list—without the
-                  spreadsheet.
-                </p>
-                <div className="mini-facts">
-                  <div>
-                    <Clock3 aria-hidden="true" />
-                    <strong>Checked nightly</strong>
-                    <span>Fresh deadline records</span>
-                  </div>
-                  <div>
-                    <Smartphone aria-hidden="true" />
-                    <strong>Built for the field</strong>
-                    <span>Your day from your phone</span>
-                  </div>
-                </div>
-              </div>
-              <div className="single-phone" data-reveal="up">
-                <Image
-                  src="/product/deadline-tracking.png"
-                  alt="Phone view listing overdue and upcoming Clean Truck Check deadlines"
-                  width={720}
-                  height={1512}
-                  sizes="(max-width: 760px) 72vw, 400px"
-                />
-              </div>
-            </div>
-
-            <div className="desktop-feature">
-              <div className="desktop-feature__copy">
-                <div>
-                  <Monitor aria-hidden="true" />
-                  <p className="eyebrow">For the bigger screen</p>
-                </div>
-                <h3>The whole week and every deadline, in one place.</h3>
-                <p>
-                  Sort by customer or deadline, find a truck by VIN, confirm new
-                  booking requests, and dispatch the day without clicking
-                  through five tools.
-                </p>
-              </div>
-              <div className="desktop-shot" data-reveal="up">
-                <Image
-                  src="/product/desktop-command-center.png"
-                  alt="Desktop GoTruckCheck command center with truck deadlines, booking request, and schedule"
-                  width={2720}
-                  height={1966}
-                  sizes="(max-width: 760px) calc(100vw - 32px), 1180px"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section deadline-section">
-          <div className="container deadline-card" data-reveal="up">
-            <div className="deadline-card__mark">
-              <Truck aria-hidden="true" />
-            </div>
-            <div>
-              <p className="eyebrow">More testing is coming</p>
-              <h2>Be ready before OBD trucks move to four tests a year.</h2>
-              <p>
-                CARB says quarterly testing for OBD-equipped vehicles begins in
-                October 2027. The testers with a follow-up system will be ready
-                for the extra work.
-              </p>
-              <a
-                className="text-link"
-                href="https://ww2.arb.ca.gov/vehicle-owners-emissions-compliance-testing-requirements-clean-truck-check"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Read the CARB testing schedule
+      <section className="hero">
+        <div className="container hero__grid">
+          <div className="hero__copy">
+            <p className="eyebrow">Built for Clean Truck Check testers</p>
+            <h1>Turn every truck you&apos;ve tested into monthly revenue.</h1>
+            <p className="hero__lede">
+              Track every deadline. Send automatic texts from your number. Let
+              customers book with a tap. <strong>$2 per truck a month.</strong>{" "}
+              Most testers can bill it back at $5–10.
+            </p>
+            <div className="hero__actions">
+              <a className="button button--primary" href="#early-access">
+                Put my trucks on the list
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+              <a className="text-link" href="#the-money">
+                See the money math
                 <ArrowRight aria-hidden="true" size={16} />
               </a>
             </div>
+            <p className="hero__trust">
+              <Check aria-hidden="true" size={16} />
+              No contract. Your customers install nothing.
+            </p>
           </div>
-        </section>
 
-        <section className="section faq-section" id="questions">
-          <div className="container faq-grid">
-            <div>
-              <p className="eyebrow">Straight answers</p>
-              <h2>Before you put a truck on the list.</h2>
+          <div className="hero__visual" aria-label="Example customer reminder text">
+            <div className="hero__caption">
+              <span className="status-dot" aria-hidden="true" />
+              Sent from your business number
             </div>
-            <div className="faq-list">
-              <details>
-                <summary>Do my customers need an app?</summary>
-                <p>
-                  No. They get a normal text and a booking link. No account, no
-                  password, no training.
-                </p>
-              </details>
-              <details>
-                <summary>Do I need a computer?</summary>
-                <p>
-                  No. You can run the day from your phone. The desktop view is
-                  there when you want more room.
-                </p>
-              </details>
-              <details>
-                <summary>What if a customer sells a truck?</summary>
-                <p>
-                  Archive it. That truck drops from your billing immediately.
-                </p>
-              </details>
-              <details>
-                <summary>Am I locked in?</summary>
-                <p>No contract. Cancel anytime.</p>
-              </details>
-              <details>
-                <summary>Does GoTruckCheck submit tests to CARB?</summary>
-                <p>
-                  No. GoTruckCheck tracks deadlines, sends reminders, and helps
-                  schedule work. It does not replace CTC-VIS or submit test
-                  results.
-                </p>
-              </details>
+            <div className="phone-stage">
+              <Image
+                src="/product/text-message-loop.png"
+                alt="Text conversation showing an automatic deadline reminder turning into a booked truck test"
+                width={720}
+                height={1512}
+                sizes="(max-width: 760px) 78vw, 410px"
+                loading="eager"
+                priority
+              />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="closing">
-          <div className="container closing__inner">
+      <section className="proof-strip" aria-label="Product facts">
+        <div className="container proof-strip__inner">
+          <div>
+            <strong>$2</strong>
+            <span>per truck / month</span>
+          </div>
+          <div>
+            <strong>60 · 30 · 15</strong>
+            <span>day reminder options</span>
+          </div>
+          <div>
+            <strong>0</strong>
+            <span>apps for customers to install</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section money-section" id="the-money">
+        <div className="container">
+          <div className="section-heading section-heading--split">
             <div>
-              <p className="eyebrow">Early access</p>
-              <h2>Put the follow-up on autopilot.</h2>
+              <p className="eyebrow">A new service to sell</p>
+              <h2>Add compliance monitoring to every invoice.</h2>
+            </div>
+            <p>
+              GoTruckCheck is your wholesale cost. You set the retail price. The
+              monthly monitoring fee can pay for the system before a reminder
+              books a single test.
+            </p>
+          </div>
+
+          <RevenueCalculator />
+
+          <div className="pay-twice">
+            <div className="pay-twice__number">01</div>
+            <div>
+              <h3>It pays when you bill monitoring.</h3>
+              <p>Add a recurring line item at the price that fits your market.</p>
+            </div>
+            <div className="pay-twice__number">02</div>
+            <div>
+              <h3>It pays again when the next test books.</h3>
+              <p>Every reminder is a sales touch that runs on its own.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section how-section" id="how-it-works">
+        <div className="container how-grid">
+          <div className="how-intro">
+            <p className="eyebrow">How it works</p>
+            <h2>You keep testing. The follow-up runs itself.</h2>
+            <p>
+              No long setup. No new app for your fleets. We get the list in, watch
+              the dates, and keep the jobs moving back to you.
+            </p>
+          </div>
+          <ol className="steps" data-reveal="up">
+            <li>
+              <span className="step-number">1</span>
+              <div>
+                <h3>Send us your customer list</h3>
+                <p>
+                  A spreadsheet, photos of your notebook—whatever you have.
+                  We&apos;ll load it by tomorrow.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span className="step-number">2</span>
+              <div>
+                <h3>We watch every deadline</h3>
+                <p>
+                  Each VIN is checked against Clean Truck Check records nightly,
+                  so your list stays ready to work.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span className="step-number">3</span>
+              <div>
+                <h3>Reminders send from your number</h3>
+                <p>
+                  Your name, your voice. Customers pick a time with a tap. You
+                  confirm.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="section product-section" id="product">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">The machine behind the service</p>
+            <h2>You sell the compliance. The alerts sell the appointments.</h2>
+            <p>
+              Phone-first for the field. A full command center when you want the
+              whole business on one screen.
+            </p>
+          </div>
+
+          <div className="feature-row">
+            <div className="feature-copy">
+              <p className="eyebrow">The text that books the job</p>
+              <h3>Your reminder. Your number. Their next test.</h3>
               <p>
-                $2 per truck a month. No contract. The first list gets loaded
-                for you.
+                Texts go out at the intervals you choose. The booking link is
+                branded as your business. A reply or tap lands on your schedule.
+              </p>
+              <ul className="check-list">
+                <li>
+                  <Check aria-hidden="true" /> Automatic SMS and email reminders
+                </li>
+                <li>
+                  <Check aria-hidden="true" /> Tap to book, reschedule, or cancel
+                </li>
+                <li>
+                  <Check aria-hidden="true" /> Nothing for your customer to install
+                </li>
+              </ul>
+            </div>
+            <div className="phone-pair" data-reveal="up">
+              <figure>
+                <Image
+                  src="/product/text-message-loop.png"
+                  alt="Automatic reminder text from a tester's business number"
+                  width={720}
+                  height={1512}
+                  sizes="(max-width: 760px) 48vw, 310px"
+                />
+              </figure>
+              <figure>
+                <Image
+                  src="/product/customer-booking.png"
+                  alt="Customer booking page for choosing trucks, date, and time"
+                  width={720}
+                  height={1512}
+                  sizes="(max-width: 760px) 48vw, 310px"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <div className="feature-row feature-row--reverse">
+            <div className="feature-copy">
+              <p className="eyebrow">No deadline hunting</p>
+              <h3>Know who is due before they do.</h3>
+              <p>
+                Open the phone and see what&apos;s overdue, what&apos;s next, and
+                what already booked. That&apos;s the call list—without the
+                spreadsheet.
+              </p>
+              <div className="mini-facts">
+                <div>
+                  <Clock3 aria-hidden="true" />
+                  <strong>Checked nightly</strong>
+                  <span>Fresh deadline records</span>
+                </div>
+                <div>
+                  <Smartphone aria-hidden="true" />
+                  <strong>Built for the field</strong>
+                  <span>Your day from your phone</span>
+                </div>
+              </div>
+            </div>
+            <div className="single-phone" data-reveal="up">
+              <Image
+                src="/product/deadline-tracking.png"
+                alt="Phone view listing overdue and upcoming Clean Truck Check deadlines"
+                width={720}
+                height={1512}
+                sizes="(max-width: 760px) 72vw, 400px"
+              />
+            </div>
+          </div>
+
+          <div className="desktop-feature">
+            <div className="desktop-feature__copy">
+              <div className="desktop-feature__lead">
+                <p className="eyebrow">
+                  <Monitor aria-hidden="true" />
+                  For the bigger screen
+                </p>
+                <h3>The whole week and every deadline, in one place.</h3>
+              </div>
+              <p>
+                Sort by customer or deadline, find a truck by VIN, confirm new
+                booking requests, and dispatch the day without clicking through
+                five tools.
               </p>
             </div>
-            <div className="closing__action">
-              <a className="button button--light" href={earlyAccessHref}>
-                <Mail aria-hidden="true" size={18} />
-                Put my trucks on the list
-              </a>
+            <div className="desktop-shot" data-reveal="up">
+              <Image
+                src="/product/desktop-command-center.png"
+                alt="Desktop GoTruckCheck command center with truck deadlines, booking request, and schedule"
+                width={2720}
+                height={1966}
+                sizes="(max-width: 760px) calc(100vw - 32px), 1180px"
+              />
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <footer className="site-footer">
-        <div className="container footer__top">
-          <a className="brand brand--footer" href="#" aria-label="GoTruckCheck home">
-            <Image
-              src="/brand/gotruckcheck-logo.png"
-              alt="GoTruckCheck"
-              width={787}
-              height={148}
-            />
-          </a>
-          <p>Deadline monitoring and scheduling for Clean Truck Check testers.</p>
-          <a href={earlyAccessHref}>Early access</a>
+      <section className="section pricing-section" id="pricing">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Pricing</p>
+            <h2>One price. Every feature. No contract.</h2>
+            <p>
+              You pay for the trucks you are watching this month—nothing else.
+              Archive a truck and it comes off the bill the same day.
+            </p>
+          </div>
+
+          <div className="plan" data-reveal="up">
+            <div className="plan__price">
+              <p className="eyebrow">Per truck</p>
+              <div className="plan__amount">
+                <span className="plan__currency">$</span>
+                <span className="plan__figure">2</span>
+                <span className="plan__period">
+                  per truck
+                  <br />
+                  per month
+                </span>
+              </div>
+              <p className="plan__note">
+                Billed monthly. No setup fee, no per-message charge, no minimum.
+              </p>
+              <a className="button button--primary plan__cta" href="#early-access">
+                Get early access
+                <ArrowRight aria-hidden="true" size={18} />
+              </a>
+              <p className="plan__cancel">Cancel anytime.</p>
+            </div>
+
+            <div className="plan__includes">
+              <h3>Everything is included</h3>
+              <ul className="check-list check-list--two">
+                {pricingIncludes.map((item) => (
+                  <li key={item}>
+                    <Check aria-hidden="true" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="container footer__bottom">
-          <p>© {new Date().getFullYear()} GoTruckCheck.</p>
-          <p>Not affiliated with the California Air Resources Board.</p>
+      </section>
+
+      <section className="section deadline-section">
+        <div className="container deadline-card" data-reveal="up">
+          <div className="deadline-card__mark">
+            <Truck aria-hidden="true" />
+          </div>
+          <div>
+            <p className="eyebrow">More testing is coming</p>
+            <h2>Be ready before OBD trucks move to four tests a year.</h2>
+            <p>
+              CARB says quarterly testing for OBD-equipped vehicles begins in
+              October 2027. The testers with a follow-up system will be ready for
+              the extra work.
+            </p>
+            <a
+              className="text-link"
+              href="https://ww2.arb.ca.gov/vehicle-owners-emissions-compliance-testing-requirements-clean-truck-check"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read the CARB testing schedule
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
+          </div>
         </div>
-      </footer>
+      </section>
+
+      <section className="section why-section" id="why">
+        <div className="container why-grid">
+          <div>
+            <p className="eyebrow">Why we built this</p>
+            <h2>The test is a day of work. The list is the business.</h2>
+          </div>
+          <div className="why-copy">
+            <p>
+              Clean Truck Check turned a one-time inspection into a deadline that
+              comes back every year—and, for OBD trucks, four times a year
+              starting in October 2027. Testers already do the hard part. What
+              gets lost is the follow-up: which truck is due, whose phone number
+              is current, and who booked the next one.
+            </p>
+            <p>
+              Most of that tracking still lives in a spreadsheet, a notebook, or
+              someone&apos;s memory. So the repeat work leaks to whoever calls
+              first. GoTruckCheck exists to close that gap—quietly, from your
+              number, under your business name.
+            </p>
+            <p>
+              We are opening it up to a small group of testers first so the setup
+              gets done properly, one list at a time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section data-section" id="data">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">Your data</p>
+            <h2>Your customer list stays your customer list.</h2>
+            <p>
+              You are handing over the contact list your business runs on. Here is
+              exactly what we do with it.
+            </p>
+          </div>
+
+          <div className="trust-grid" data-reveal="up">
+            <div className="trust-card">
+              <ShieldCheck aria-hidden="true" />
+              <h3>We never sell or share it</h3>
+              <p>
+                Your customers, trucks, and phone numbers are used to run your
+                account. They are not sold, rented, or shared with other testers.
+              </p>
+            </div>
+            <div className="trust-card">
+              <Lock aria-hidden="true" />
+              <h3>Encrypted in transit and at rest</h3>
+              <p>
+                Data moves over TLS and is stored encrypted. Access is limited to
+                the people who keep the service running.
+              </p>
+            </div>
+            <div className="trust-card">
+              <Download aria-hidden="true" />
+              <h3>Export or delete, anytime</h3>
+              <p>
+                Ask for your list back and you get a clean export. Ask us to
+                delete it and it goes—no retention hold, no exit fee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section faq-section" id="questions">
+        <div className="container faq-grid">
+          <div>
+            <p className="eyebrow">Straight answers</p>
+            <h2>Before you put a truck on the list.</h2>
+          </div>
+          <div className="faq-list">
+            {faqs.map((faq) => (
+              <details key={faq.question}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="access-section" id="early-access">
+        <div className="container access-grid">
+          <div className="access-copy">
+            <p className="eyebrow">Early access</p>
+            <h2>Put the follow-up on autopilot.</h2>
+            <p>
+              Tell us a little about your operation. We&apos;ll load your first
+              customer list, set your reminder intervals, and hand you a booking
+              link in your business name.
+            </p>
+            <ul className="access-points">
+              <li>
+                <Check aria-hidden="true" /> $2 per truck a month, no contract
+              </li>
+              <li>
+                <Check aria-hidden="true" /> We load your first list for you
+              </li>
+              <li>
+                <Check aria-hidden="true" /> Nothing for your customers to install
+              </li>
+            </ul>
+          </div>
+          <EarlyAccessForm mode={submitMode} />
+        </div>
+      </section>
     </>
   );
 }
