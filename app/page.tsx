@@ -120,7 +120,7 @@ export default function Home() {
             <li>
               <span className="step-number">3</span>
               <div>
-                <h3>Reminders send from your number</h3>
+                <h3>Reminder sent automatically</h3>
                 <p>
                   Your name, your voice. Customers pick a time with a tap. You
                   confirm.
