@@ -31,3 +31,4 @@ A credentialed tester understands within 30 seconds that GoTruckCheck can create
 - **2026-07-28** — Keep navy `#1d4a9b` as the only marketing accent and reserve green `#2f9e57` for success/status. *Why:* this is the established product brand and green must retain operational meaning.
 - **2026-07-28** — Use Inter for body copy and Montserrat 800 for display copy, with sentence case throughout. *Why:* the site must feel continuous with the supplied product.
 - **2026-07-28** — No gradients, purple, decorative emoji, agency seals, or stock handshake photography. *Why:* plain visual proof builds more trust with this audience than startup decoration.
+- **2026-07-29** — Keep every product screenshot inside the page container and give phone mockups visible breathing room. *Why:* oversized crops make the product feel cramped or accidentally broken instead of polished.

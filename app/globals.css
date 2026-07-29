@@ -778,7 +778,7 @@ summary {
 .single-phone {
   position: relative;
   display: flex;
-  height: 39rem;
+  height: 28.5rem;
   justify-content: center;
   padding-top: 2.5rem;
   border: 1px solid var(--navy-ring);
@@ -791,8 +791,8 @@ summary {
 }
 
 .single-phone img {
-  width: 25rem;
-  max-width: 76%;
+  width: 19rem;
+  max-width: 68%;
 }
 
 .mini-facts {
@@ -858,7 +858,8 @@ summary {
 }
 
 .desktop-shot {
-  width: 110%;
+  width: 100%;
+  max-width: 100%;
   margin-top: var(--space-12);
   overflow: hidden;
   border: 1px solid var(--navy-ring);
@@ -1251,10 +1252,11 @@ summary {
   }
 
   .single-phone {
-    height: 30rem;
+    height: 28.75rem;
   }
 
   .single-phone img {
+    width: 18rem;
     max-width: 86%;
   }
 
